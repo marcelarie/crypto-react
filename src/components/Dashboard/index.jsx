@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import HeaderDashboard from './Header'
 import FooterDashboard from './Footer'
 import Row from './Row'
-import data from '../../api/api.js'
+import data from '../../api'
 
 
 const Dashboard = () => {
@@ -13,8 +13,8 @@ const Dashboard = () => {
     // I dont know why this runs
     // two times (?)
     data.then(result => {
-        console.log(result)
         setCryptos(result.data.data)
+        // console.log(result.data.data)
     })
 
     return (
@@ -23,7 +23,9 @@ const Dashboard = () => {
             <table>
                 <tbody>
                     {
-                        // cryptos.map(crypto => <Row data={cryptos} />)
+                        cryptos.map((crypto, index) => {
+                            return <Row key={index} data={crypto} />
+                        })
                     }
                 </tbody>
             </table>
