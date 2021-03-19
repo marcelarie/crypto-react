@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import HeaderDashboard from './Header'
 import FooterDashboard from './Footer'
 import Row from './Row'
@@ -14,7 +14,7 @@ const Dashboard = () => {
     // two times (?)
     data.then(result => {
         setCryptos(result.data.data)
-        // console.log(result.data.data)
+        console.log(result.data.data)
     })
 
     return (
